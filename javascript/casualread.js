@@ -34,7 +34,7 @@ function loadlist(){
         code+=responsearray[i].download_url;
         code+='\"target="_blank">';
         code+=responsearray[i].name;
-        code+="<\/a><\/li>"
+        code+="<\/a><\/li>";
     }
     code+="<\/ul>";
     let para=document.createElement("P");

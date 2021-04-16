@@ -30,11 +30,11 @@ function loadlist(){
     let code="<ul>"
     for(let i=0;i<responsearray.length;i++){
         code+="<li>";
-        code+='<a href=\"';
+        code+='<a href=\"book_display.html?readbookurl=';
         code+=responsearray[i].download_url;
         code+='\"target="_blank">';
         code+=responsearray[i].name;
-        code+="<\/a><\/li>"
+        code+="<\/a><\/li>";
     }
     code+="<\/ul>";
     let para=document.createElement("P");
