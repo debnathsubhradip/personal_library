@@ -44,4 +44,28 @@ function loadlist(){
 
 }
 
+function search(){
+    let searchlabel = document.getElementById('searchlabel');
+    let text=new RegExp(searchlabel.value.toLowerCase());
+    if(document.getElementById('booklist')!=null){
+        document.getElementById('booklist').remove();
+    }
+    let result;
+    let displaylist=document.getElementById('displaylist');
+    let code="<ul>"
+    for(let i=0;i<responsearray.length;i++){
+        if( (result=(text).test(responsearray[i].name.toLowerCase()))===true){
+            console.log(result);
+            code+='<a href=\"book_display.html?readbookurl=';
+            code+=responsearray[i].download_url;
+            code+='\"target="_blank">';
+            code+=responsearray[i].name;
+            code+="<\/a><\/li>";
+    }}
+    code+="<\/ul>";
+    let para=document.createElement("P");
+    para.id='booklist';
+    para.innerHTML=code;
+    displaylist.appendChild(para);
+}
 // loadlist();
