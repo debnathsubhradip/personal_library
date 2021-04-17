@@ -22,6 +22,7 @@ loadresource();
 // responsearray=JSON.stringify(responsearray);
 
 function loadlist(){
+    document.getElementById('searchlabel').value="";
     if(document.getElementById('booklist')!=null){
         document.getElementById('booklist').remove();
     }
