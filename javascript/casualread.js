@@ -26,10 +26,11 @@ function loadlist(){
     if(document.getElementById('booklist')!=null){
         document.getElementById('booklist').remove();
     }
-    
+    let checklist=0;
     let displaylist=document.getElementById('displaylist');
     let code="<ul>"
     for(let i=0;i<responsearray.length;i++){
+        checklist=1;
         code+="<li>";
         code+='<a href=\"book_display.html?readbookurl=';
         code+=responsearray[i].download_url;
@@ -38,6 +39,9 @@ function loadlist(){
         code+="<\/a><\/li>";
     }
     code+="<\/ul>";
+    if(checklist===0){
+        code+='<h1>No books found</h1>'
+    }
     let para=document.createElement("P");
     para.id='booklist';
     para.innerHTML=code;
@@ -51,11 +55,13 @@ function search(){
     if(document.getElementById('booklist')!=null){
         document.getElementById('booklist').remove();
     }
+    let checklist=0;
     let result;
     let displaylist=document.getElementById('displaylist');
     let code="<ul>"
     for(let i=0;i<responsearray.length;i++){
         if( (result=(text).test(responsearray[i].name.toLowerCase()))===true){
+            checklist=1;
             code+="<li>";
         code+='<a href=\"book_display.html?readbookurl=';
         code+=responsearray[i].download_url;
@@ -64,6 +70,9 @@ function search(){
         code+="<\/a><\/li>";
     }}
     code+="<\/ul>";
+    if(checklist===0){
+        code+='<h1>No books found</h1>'
+    }
     let para=document.createElement("P");
     para.id='booklist';
     para.innerHTML=code;
