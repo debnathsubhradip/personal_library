@@ -57,6 +57,7 @@ function search(){
     for(let i=0;i<responsearray.length;i++){
         if( (result=(text).test(responsearray[i].name.toLowerCase()))===true){
             console.log(result);
+            code+="<li>";
             code+='<a href=\"book_display.html?readbookurl=';
             code+=responsearray[i].download_url;
             code+='\"target="_blank">';
