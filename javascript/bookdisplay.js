@@ -14,9 +14,12 @@
 
 
 document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-    var adobeDCView = new AdobeDC.View({clientId: "40d2e8161f534126b53ba92d0a68a402", divId: "adobe-dc-view"});
+    setTimeout(function(){
+        let adobeDCView = new AdobeDC.View({clientId: "e1ae5c9bb9724f4496ab8714b83f67c7", divId: "adobe-dc-view"});
     adobeDCView.previewFile({
         content:{location: {url: document.location.search.replace(/^.*?\=/,'')}},
         metaData:{fileName: "Ebook Reader"}
     }, {});
+    },2000);
+    
 });
