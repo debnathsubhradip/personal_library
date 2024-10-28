@@ -12,14 +12,20 @@
 // }
 // init();
 
-
-document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-    setTimeout(function(){
-        let adobeDCView = new AdobeDC.View({clientId: "e1ae5c9bb9724f4496ab8714b83f67c7", divId: "adobe-dc-view"});
-    adobeDCView.previewFile({
-        content:{location: {url: document.location.search.replace(/^.*?\=/,'')}},
-        metaData:{fileName: "Ebook Reader"}
-    }, {});
-    },2000);
-    
+document.addEventListener("adobe_dc_view_sdk.ready", function () {
+  setTimeout(function () {
+    let adobeDCView = new AdobeDC.View({
+      clientId: "44907b7604d0492a84e08a644878015c",
+      divId: "adobe-dc-view",
+    });
+    adobeDCView.previewFile(
+      {
+        content: {
+          location: { url: document.location.search.replace(/^.*?\=/, "") },
+        },
+        metaData: { fileName: "Ebook Reader" },
+      },
+      {}
+    );
+  }, 2000);
 });
